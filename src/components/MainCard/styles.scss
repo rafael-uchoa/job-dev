@@ -1,0 +1,21 @@
+.MainCard {
+  width: 500px;
+  margin: 50px;
+  padding: 25px;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  button {
+    background-color: rgba(108, 99, 255, 1);
+    color: #edf0f1;
+    font-size: 20px;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: rgba(108, 99, 255, 0.8);
+    }
+  }
+}

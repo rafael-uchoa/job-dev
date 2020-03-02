@@ -1,0 +1,23 @@
+.Footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .react-icons {
+    font-size: 35px;
+    margin: 15px;
+    color: #3f3d56;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  p {
+    margin: 0;
+    color: #3f3d56;
+  }
+}
