@@ -1,4 +1,4 @@
-@import '../../styles/utils';
+@import "../../styles/utils";
 
 .CreateJob {
   height: 100vh;
@@ -12,5 +12,30 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    label {
+      margin-top: 10px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input {
+      padding: 8px 10px;
+      border: none;
+      border-radius: 7px;
+    }
+
+    button {
+      background-color: rgba(108, 99, 255, 1);
+      color: #edf0f1;
+      padding: 0.75rem 1.25rem;
+      margin: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: rgba(108, 99, 255, 0.8);
+      }
+    }
   }
 }
