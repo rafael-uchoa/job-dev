@@ -1,38 +1,9 @@
-import React, { createContext, useReducer } from 'react';
-import reducer from './reducer';
-import axios from 'axios';
+import React, { createContext, useReducer } from "react";
+import reducer from "./reducer";
+import axios from "axios";
 
 const initialState = {
-  jobs: [
-    {
-      id: 1,
-      title: 'Front-end Developer',
-      company: 'StartupTech',
-      salary: 120000,
-      contact_email: 'contact@startuptech.com'
-    },
-    {
-      id: 2,
-      title: 'Back-end Developer',
-      company: 'TechStartup',
-      salary: 120000,
-      contact_email: 'contact@techstartup.com'
-    },
-    {
-      id: 3,
-      title: 'Fullstack Developer',
-      company: 'TechStartup',
-      salary: 120000,
-      contact_email: 'contact@techstartup.com'
-    },
-    {
-      id: 4,
-      title: 'DevOps',
-      company: 'SomeCompany',
-      salary: 120000,
-      contact_email: 'somecompany@gmail.com'
-    }
-  ]
+  jobs: []
 };
 
 export const GlobalContext = createContext(initialState);
@@ -40,15 +11,40 @@ export const GlobalContext = createContext(initialState);
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  function addJob(job) {
-    dispatch({
-      type: 'ADD_JOB',
-      payload: job
-    });
+  async function getJobs() {
+    try {
+      const res = await axios.get("/api");
+      dispatch({
+        type: "GET_JOBS",
+        payload: res.data
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async function addJob(job) {
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+
+    try {
+      const res = axios.post("/api", job, config);
+      dispatch({
+        type: "ADD_JOB",
+        payload: res.data
+      });
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   return (
-    <GlobalContext.Provider value={{ jobs: state.jobs, addJob }}>
+    <GlobalContext.Provider
+      value={{ jobs: state.jobs, error: state.error, getJobs, addJob }}
+    >
       {children}
     </GlobalContext.Provider>
   );

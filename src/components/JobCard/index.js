@@ -1,7 +1,7 @@
-import React from 'react';
-import './styles.scss';
+import React from "react";
+import "./styles.scss";
 
-import numberWithCommas from '../../utils/numberWithCommas';
+import numberWithCommas from "../../utils/numberWithCommas";
 
 export default function JobCard({ job }) {
   return (
@@ -9,7 +9,7 @@ export default function JobCard({ job }) {
       <h2>
         {job.title} | {job.company}
       </h2>
-      <h3>${numberWithCommas(job.salary)}</h3>
+      <h3>${job.salary}</h3>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
         officiis nisi quos eaque corporis itaque fugiat repellendus quod!

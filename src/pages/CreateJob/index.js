@@ -1,15 +1,15 @@
-import React, { useState, useContext } from 'react';
-import './styles.scss';
+import React, { useState, useContext } from "react";
+import "./styles.scss";
 
-import Footer from '../../components/Footer';
+import Footer from "../../components/Footer";
 
-import { GlobalContext } from '../../context/state';
+import { GlobalContext } from "../../context/state";
 
 export default function CreateJob() {
-  const [title, setTitle] = useState('');
-  const [company, setCompany] = useState('');
-  const [salary, setSalary] = useState('');
-  const [contactEmail, setContactEmail] = useState('');
+  const [title, setTitle] = useState("");
+  const [company, setCompany] = useState("");
+  const [salary, setSalary] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
 
   const { addJob } = useContext(GlobalContext);
 
@@ -25,6 +25,8 @@ export default function CreateJob() {
     };
 
     addJob(newJob);
+
+    window.location = "/";
   }
 
   return (
