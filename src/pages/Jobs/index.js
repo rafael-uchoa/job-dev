@@ -1,10 +1,11 @@
-import React, { useContext, useEffect } from "react";
-import "./styles.scss";
+import React, { useContext, useEffect } from 'react';
+import './styles.scss';
 
-import JobCard from "../../components/JobCard";
-import Footer from "../../components/Footer";
+import BackButton from '../../components/BackButton';
+import JobCard from '../../components/JobCard';
+import Footer from '../../components/Footer';
 
-import { GlobalContext } from "../../context/state";
+import { GlobalContext } from '../../context/state';
 
 export default function Jobs() {
   const { jobs, getJobs } = useContext(GlobalContext);
@@ -15,7 +16,10 @@ export default function Jobs() {
 
   return (
     <div className="Jobs PageLoad">
-      <h1>Jobs</h1>
+      <h1>
+        <BackButton />
+        {' Jobs'}
+      </h1>
       {jobs.map(job => (
         <JobCard key={job._id} job={job} />
       ))}

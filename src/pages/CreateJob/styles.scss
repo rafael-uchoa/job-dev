@@ -1,4 +1,4 @@
-@import "../../styles/utils";
+@import '../../styles/utils';
 
 .CreateJob {
   height: 100vh;
@@ -20,9 +20,14 @@
     }
 
     input {
+      width: 250px;
       padding: 8px 10px;
-      border: none;
+      border: 2px solid lightgrey;
       border-radius: 7px;
+
+      &:focus {
+        border: 2px solid rgba(108, 99, 255, 1);
+      }
     }
 
     button {

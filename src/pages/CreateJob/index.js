@@ -1,15 +1,16 @@
-import React, { useState, useContext } from "react";
-import "./styles.scss";
+import React, { useState, useContext } from 'react';
+import './styles.scss';
 
-import Footer from "../../components/Footer";
+import BackButton from '../../components/BackButton';
+import Footer from '../../components/Footer';
 
-import { GlobalContext } from "../../context/state";
+import { GlobalContext } from '../../context/state';
 
 export default function CreateJob() {
-  const [title, setTitle] = useState("");
-  const [company, setCompany] = useState("");
-  const [salary, setSalary] = useState("");
-  const [contactEmail, setContactEmail] = useState("");
+  const [title, setTitle] = useState('');
+  const [company, setCompany] = useState('');
+  const [salary, setSalary] = useState('');
+  const [contactEmail, setContactEmail] = useState('');
 
   const { addJob } = useContext(GlobalContext);
 
@@ -26,12 +27,15 @@ export default function CreateJob() {
 
     addJob(newJob);
 
-    window.location = "/";
+    window.location = '/';
   }
 
   return (
     <div className="CreateJob PageLoad">
-      <h1>Create Jobs</h1>
+      <h1>
+        <BackButton />
+        {' Create Jobs'}
+      </h1>
       <form onSubmit={onSubmit}>
         <label htmlFor="text">Job Title</label>
         <input
