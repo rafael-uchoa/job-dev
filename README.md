@@ -13,9 +13,9 @@
 This project is part of my personal portfolio, a Fullstack job hunting website that utilizes the MERN stack.
 
 ## To Run The App
-1. `npm install || yarn`
+1. `npm i || yarn`
 2. `cd backend`
-3. `npm install || yarn`
+3. `npm i || yarn`
 2. `Add your MongoDB uri in backend/config/.env`
 3. `Have fun!`
 
