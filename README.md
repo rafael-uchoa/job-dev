@@ -27,7 +27,7 @@ This project is part of my personal portfolio, a Fullstack job hunting website t
 - Axios
 - Sass
 - React Icons
-- [unDraw SVGs](https://undraw.co/)
+- [unDraw](https://undraw.co/)
 
 ### Back-end:
 - Node.js
