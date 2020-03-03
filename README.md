@@ -1,4 +1,4 @@
-<h1 align="center">JobDev</h1>
+<h1 align="center">job-dev</h1>
 
 <h3 align="center">
   <img src="https://i.imgur.com/kznmAPy.png"><br>
