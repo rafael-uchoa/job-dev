@@ -17,15 +17,12 @@ export default function CreateJob() {
   function onSubmit(e) {
     e.preventDefault();
 
-    const newJob = {
-      id: Math.floor(Math.random() * 10000),
+    addJob({
       title,
       company,
       salary,
       contact_email: contactEmail
-    };
-
-    addJob(newJob);
+    });
 
     window.location = '/';
   }
