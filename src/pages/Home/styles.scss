@@ -1,4 +1,4 @@
-@import "../../styles/utils";
+@import '../../styles/utils';
 
 .Home {
   height: 100vh;
@@ -12,5 +12,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  @media (max-width: 1200px) {
+    main {
+      flex-direction: column;
+    }
   }
 }
